@@ -24,7 +24,7 @@ public class ExeTimeAspect {
      * annotation    : @Pointcut
      * description   : chap07 패키지와 하위 패키지의 모든 public 메서드를 Pointcut으로 설정.
      */
-    @Pointcut("execution(public * chop07..*(..))")
+    @Pointcut("execution(public * chap07..*(..))")
     private void publicTarget(){
     }
 
