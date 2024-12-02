@@ -11,3 +11,4 @@
 
 
 git commit -m  "MainForAssembler.java 까지 작업 완료"
+git commit -m  " Chapter7. AOP 프로그래밍 - end"

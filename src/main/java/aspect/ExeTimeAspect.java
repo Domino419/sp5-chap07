@@ -5,6 +5,7 @@ import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.core.annotation.Order;
 
 import java.util.Arrays;
 
@@ -16,6 +17,7 @@ import java.util.Arrays;
  *                  특정 Pointcut에 대해 실행 시간을 측정하고 로그로 출력. [리스트 7.6]
  */
 @Aspect
+@Order(1)
 public class ExeTimeAspect {
 
     /**

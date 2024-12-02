@@ -2,6 +2,7 @@ package main;
 
 
 import chap07.Calculator;
+import chap07.RecCalculator;
 import config.AppCtx;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -9,16 +10,19 @@ public class MainAspect {
     public static void main(String[] args ) {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppCtx.class) ;
 
-        Calculator cal = ctx.getBean("calculator", Calculator.class) ;
+       //  Calculator cal = ctx.getBean("calculator", Calculator.class) ;
+       // getBean에 RecCalculator 타입을 사용하도록 수정
+        RecCalculator cal = ctx.getBean("calculator", RecCalculator.class) ;
         long fiveFact = cal.factorial(5)  ;
         System.out.println("cal.factorial(5) = "+ fiveFact );
         System.out.println(cal.getClass().getName());
+        System.out.println("MainAspect ---! ");
         ctx.close();
     }
 }
 
 /*
-에러해결
+스프링 AOP 실습 중 출력값이 예상값과 다른 부분 에러해결
         -AOP 설정이 제대로 되어 있지 않아서
         리스트 7.7 ~ 프록시 클래스가 출력되어야 하는데 원본 클래스 이름이 출력됨.
         .AppCtx에서 @EnableAspectJAutoProxy 설정 확인  ok
@@ -28,5 +32,6 @@ public class MainAspect {
         RecCalculator.factorial([5]) 실행 시간 : 24100 ns
         cal.factorial(5) = 120
         com.sun.proxy.$Proxy17
+
 
 */

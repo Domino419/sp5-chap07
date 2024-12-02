@@ -15,7 +15,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  *                  AOP 설정을 활성화하고 필요한 빈을 정의.  [리스트 7.7]
  */
 @Configuration
-@EnableAspectJAutoProxy
+@EnableAspectJAutoProxy(proxyTargetClass = true)
 public class AppCtx {
 
     /**
